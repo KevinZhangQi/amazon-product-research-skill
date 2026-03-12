@@ -8,9 +8,10 @@ alias:
   - amazon-seller-research
   - apiclaw
 description: >
-  Amazon product research and seller intelligence via APIClaw. Use this skill to find profitable
-  product opportunities, validate markets, analyze categories, compare competitors, review ASINs,
-  spot low-competition niches, estimate demand, and recommend pricing and positioning for Amazon sellers.
+  Skill for Amazon product research, market validation, competitor analysis, ASIN review, pricing guidance,
+  and product opportunity discovery. It turns ecommerce data into structured seller workflows such as category evaluation,
+  product discovery, competitor comparison, and research reporting. It uses APIClaw (apiclaw.io) as its data source.
+  This skill requires one credential, `APICLAW_API_KEY`, used only for requests to the APIClaw API.
   Triggers on requests like "Amazon product research", "find products", "analyze competitors",
   "analyze this ASIN", "pricing strategy", "market validation", and "is this niche worth entering".
 version: 2.0.0
@@ -44,11 +45,11 @@ related_skills:
   - apify-ecommerce
 ---
 
-# APIClaw — Amazon Product Research & Seller Intelligence
+# Amazon Product Research & Seller Intelligence
 
 > A skill for Amazon sellers who need market validation, category analysis, product selection, competitor research, ASIN reviews, pricing guidance, and complete research reports.
 >
-> Use this skill to move from broad market exploration to concrete product recommendations.
+> It uses APIClaw (apiclaw.io) as its data source, while keeping the focus on structured research workflows and actionable seller decisions.
 
 ---
 
@@ -64,9 +65,16 @@ This skill is best for:
 - pricing and positioning: recommending a launch range and market angle
 - report generation: combining multiple endpoints into a structured market report
 
+## Credentials
+
+- Required credential: `APICLAW_API_KEY`
+- Purpose: authenticate requests to the APIClaw API
+- Scope: used only for `https://api.apiclaw.io`
+- No other credentials are required by this skill
+
 ## Quick start
 
-> **An API key is required.** Create one at [APIClaw](https://api.apiclaw.io) and configure `APICLAW_API_KEY` before using the API.
+> **This skill requires one credential: `APICLAW_API_KEY`.** Create it at [APIClaw](https://api.apiclaw.io) and configure it before running research workflows.
 
 You can ask questions like:
 
@@ -111,6 +119,13 @@ You can ask questions like:
 | Monitor changes over time | Daily operations | `06-daily-operations.md` |
 
 ---
+
+## Safety and scope
+
+- This is an instruction-focused research skill
+- It does not install software, request unrelated secrets, or require elevated privileges
+- It uses network access only when the user invokes APIClaw-backed research workflows
+- Its external data dependency is the APIClaw API
 
 ## API configuration
 
