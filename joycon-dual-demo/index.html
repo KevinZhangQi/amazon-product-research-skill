@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dual Joy-Con Platformer</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero card">
+        <div>
+          <p class="eyebrow">Browser game prototype</p>
+          <h1>Dual Joy-Con Platformer Demo</h1>
+          <p class="subcopy">
+            A browser game scaffold specifically shaped for two separate Joy-Con
+            controllers: left Joy-Con drives Player 1, right Joy-Con drives Player 2.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="connectButton">Connect Joy-Cons</button>
+          <button id="resetButton" class="secondary">Reset</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h2>How it works</h2>
+          <ol>
+            <li>Click <strong>Connect Joy-Cons</strong>.</li>
+            <li>Select one left Joy-Con and one right Joy-Con.</li>
+            <li>The page pairs them to Player 1 and Player 2.</li>
+            <li>Movement uses the bound Joy-Con gamepad input.</li>
+          </ol>
+          <p class="note">
+            Best target: desktop Chrome or Edge. WebHID is used for Joy-Con discovery and side assignment.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Connection status</h2>
+          <div id="joyconStatus" class="status-list"></div>
+        </article>
+        <article class="card span-2">
+          <h2>Controls</h2>
+          <div class="control-columns">
+            <div>
+              <h3>Left Joy-Con → Player 1</h3>
+              <p>Stick or D-pad to move, lower face button to jump.</p>
+            </div>
+            <div>
+              <h3>Right Joy-Con → Player 2</h3>
+              <p>Stick or D-pad to move, lower face button to jump.</p>
+            </div>
+          </div>
+          <p class="note">Keyboard fallback: A/D/W for Player 1, ←/→/↑ for Player 2.</p>
+        </article>
+      </section>
+
+      <canvas id="game" width="1080" height="600"></canvas>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
