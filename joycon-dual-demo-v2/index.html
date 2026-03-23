@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dual Joy-Con Platformer V2</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero card">
+        <div>
+          <p class="eyebrow">Joy-Con web game prototype</p>
+          <h1>Dual Joy-Con Platformer V2</h1>
+          <p class="subcopy">
+            A more product-like browser demo with a start overlay, controller readiness,
+            collectible stars, hazards, and a round win state.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="connectButton">Connect Joy-Cons</button>
+          <button id="startButton" class="accent">Start Round</button>
+          <button id="resetButton" class="secondary">Reset</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card span-2 compact-card">
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Round state</span>
+              <strong id="roundState">Waiting to start</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Player 1 stars</span>
+              <strong id="p1Stars">0</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Player 2 stars</span>
+              <strong id="p2Stars">0</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Winner</span>
+              <strong id="winnerLabel">—</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Connection flow</h2>
+          <ol>
+            <li>Pair Joy-Cons with the operating system over Bluetooth.</li>
+            <li>Click <strong>Connect Joy-Cons</strong> and select one left plus one right Joy-Con.</li>
+            <li>Wait until both controllers are marked ready.</li>
+            <li>Click <strong>Start Round</strong>.</li>
+          </ol>
+          <p class="note">Keyboard fallback remains available for quick local testing.</p>
+        </article>
+
+        <article class="card">
+          <h2>Controller readiness</h2>
+          <div id="joyconStatus" class="status-list"></div>
+        </article>
+      </section>
+
+      <section class="canvas-wrap">
+        <canvas id="game" width="1180" height="640"></canvas>
+        <div id="overlay" class="overlay visible">
+          <div class="overlay-card">
+            <p class="eyebrow">Ready check</p>
+            <h2 id="overlayTitle">Connect controllers and start</h2>
+            <p id="overlayText">
+              This round expects a left Joy-Con for Player 1 and a right Joy-Con for Player 2.
+            </p>
+            <div class="overlay-actions">
+              <button id="overlayPrimary">Start when ready</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
