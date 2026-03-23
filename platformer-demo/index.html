@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joy-Con Platformer Demo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hud">
+        <div>
+          <h1>Joy-Con Platformer Demo</h1>
+          <p>
+            Simple browser platformer prototype with keyboard fallback and
+            multi-gamepad detection.
+          </p>
+        </div>
+        <div class="controls">
+          <button id="resetButton">Reset Level</button>
+        </div>
+      </section>
+
+      <section class="status-grid">
+        <div class="card">
+          <h2>Controls</h2>
+          <ul>
+            <li>Keyboard: A/D or ←/→ to move, W/Space/↑ to jump</li>
+            <li>Gamepad: Left stick / D-pad to move, South button to jump</li>
+            <li>Two connected Joy-Con or controllers are shown below</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Connected controllers</h2>
+          <div id="controllers" class="controller-list">No controller detected yet.</div>
+        </div>
+      </section>
+
+      <canvas id="game" width="960" height="540" aria-label="Platformer game canvas"></canvas>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
